@@ -462,8 +462,167 @@
 
 ## Expressions and Return ##
 
-    You may have notices, indirectly at this point, that every time you enter
+    You may have noticed, indirectly at this point, that every time you enter
     something into irb you see the => back, which is called a hash rocket
     (cool name, huh?), followed by whatever your Ruby expression returns.
     When you type something in at the irb prompt, you are creating an
-    expression. An expression is anything that can be evaluated,
+    expression. An expression is anything that can be evaluated, and pretty
+    much everything you write in Ruby is an expression. An expression in Ruby
+    always returns something, even if that's an error message or nil.
+    We'll talk in more depth about return as we move on, but remember
+    that Ruby expressions always return a value, even if that value is nil
+    or an error.
+
+## puts vs return ##
+
+    It's common for new Ruby programmers with little experience to become
+    confused with the difference between puts and return. The confusion
+    arises from a misundestanding of what both puts and return are.
+    When we call the puts method, we're telling Ruby to print something to
+    the screen. However, puts does not return what is printed to the screen.
+    Expressions do something, but they also return something. The value
+    returned is not necessarily the action that was performed. Let's take
+    a look in irb.
+
+        puts "stuff"
+        stuff
+        => nil
+
+    You can see that the word stuff was printed to the console and then a nil,
+    which is Ruby's way of saying "nothing", was returned. It's important to
+    understand that distinction. For example:
+
+        a = puts "stuff"
+        puts a
+
+    What should we expect? a is assigned to the value return by puts "stuff,
+    which is nil. Therefore, puts a results in "nil" being printed out.
+    We are going to go much further into puts and return later when we talk
+    about methods, but we had to show you puts because we are going to be using
+    it in future examples.
+
+## Summary ##
+
+    This chapter covered the basic building blocks of the Ruby language.
+    You learned some basic data types and how to combine those types
+    with operators. You also learned about data structures and how to use
+    those structures to hold and access data. We'll dive much deeper into
+    these in the coming chapters, but for now, let's "learn through our fingers"
+    and do some exercises to deepen our understanding of the basics.
+
+## Exercises ##
+
+    Add two strings together that, when concatenated, return your first
+    and last name as your full name in one string.
+
+    "<Firstname> <Lastname>"
+
+    For example, if your name is John Doe, think about how you can put
+    "John" and "Doe" together to get "John Doe".
+
+    My answer:
+
+        first_name = "Cyber"
+        last_name = "Racc"
+
+        first_name + last_name
+
+    Could also simply do: "Cyber" + "Racc", if it were an actual name you
+    could add a space after "Cyber", like "Cyber " + "Racc" for "Cyber Racc".
+
+# Exercise 2 #
+
+    Use the modulo operator, division, or a combination of
+    both to take a 4 digit number and find the digit in the:
+    1) thousands place 2) hundreds place 3) tens place 4) ones place
+
+    Solution:
+
+        thousands = 4936 / 1000
+        hundreds = 4936 % 1000 / 100
+        tens = 4936 % 1000 % 100 / 10
+        ones = 4936 % 1000 % 100 % 10
+
+        Note that for the tens and ones, you can skip the extra % operations
+        like this:
+
+        tens = 4936 % 100 / 10
+        ones = 4936 % 10
+
+# Exercise 3 #
+
+    Write a program that uses a hash to store a list of movie titles
+    with the year they came out. Then use the puts command to make your
+    program print out the year of each movie to the screen. The output
+    for your program should look something like this:
+
+        1975
+        2004
+        2013
+        2001
+        1981
+
+    My answer:
+
+        movies = {  :"Ready Player One" => 2018,
+                    :"Avatar" => 2009,
+                    :"Tron: Legacy" => 2010 }
+
+        puts movies[:"Ready Player One"]
+        puts movies[:"Avatar"]
+        puts movies[:"Tron: Legacy"]
+
+# Exercise 4 #
+
+    Use the dates from the previous example and store them in an array.
+    Then make your program output the same thing as exercise 3.
+
+    My answer:
+
+        dates = [1975, 2004, 2013, 2001, 1981]
+
+        puts dates[0]
+        puts dates[1]
+        puts dates[2]
+        puts dates[3]
+        puts dates[4]
+
+# Exercise 5 #
+
+    Write a program that outputs the factorial of the numbers 5, 6, 7 and 8.
+
+    Solution:
+
+        puts 5 * 4 * 3 * 2 * 1
+        puts 6 * 5 * 4 * 3 * 2 * 1
+        puts 7 * 6 * 5 * 4 * 3 * 2 * 1
+        puts 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
+
+# Exercise 6 #
+
+    Write a program that calculates the squares of 3 float numbers of
+    your choosing and outputs the result to the screen.
+
+    Solution:
+
+        puts 4.30 * 4.30
+        puts 6.13 * 6.13
+        puts 124.34 * 124.34
+
+# Exercise 7 #
+
+    What does the following error message tell you?
+
+        SyntaxError: (irb):2: syntax error, unexpected ')', expecting '}'
+        from /usr/local/rvm/rubies/ruby-2.5.3/bin/irb:16:in `<main>'
+
+    My answer:
+
+        It means the coder has used a bracket instead of a curly bracket.
+
+    Solution:
+
+        There is an opening bracket somewhere in the program without a
+        closing bracket following it. It may have happened when
+        creating a hash.
+        
