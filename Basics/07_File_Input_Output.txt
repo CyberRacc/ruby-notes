@@ -1,0 +1,91 @@
+### Ruby - File I/O ###
+
+    Ruby provides a whole set of I/O-related methods implemented in the Kernel module.
+    All the I/O methods are derived from the class IO.
+
+    The class IO provides all the basic methods such as read, write, gets, puts, readline, getc,
+    and printf.
+
+    This chapter will cover the basic I/O functions available in Ruby.
+
+## The puts Statement ##
+
+    In the previous chapter, you have assigned values to variables and then printed
+    the output using puts statement.
+
+    The puts statement instructs the program to display the value stored in the variable.
+    This will add a new line at the end of each line it writes.
+
+    # Example #
+
+        #!/usr/bin/ruby
+
+        val1 = "This is variable one"
+        val2 = "This is variable two"
+        puts val1
+        puts val2
+
+    This will produce the following result:
+
+        This is variable one
+        This is variable two
+
+## The gets Statement ##
+
+    The gets statement can be used to take any input from the user from standard screen called
+    STDIN.
+
+    # Example #
+
+        The following code shows you how to use the gets statement. This code will prompt the user
+        to enter a value, which will be stored in a variable val and finally will be printed on
+        STDOUT.
+
+            #!/usr/bin/ruby
+
+            puts "Enter a value :"
+            val = gets
+            puts val
+
+        This will produce the following result:
+
+            Enter a value :
+            This is entered value
+            This is entered value
+
+## The putc Statement ##
+
+    Unlike the puts statement, which outputs the entire string onto the screen, the putc
+    statement can be used to output one character at a time.
+
+    # Example #
+
+        The output of the following code is just the character H -
+
+            #!/usr/bin/ruby
+
+            str = "Hello Ruby!"
+            putc str
+
+        This will produce the following result:
+
+            H
+
+## The print Statement ##
+
+    The print statement is similar to the puts statement. The only difference is that the puts
+    statement goes to the next line after printing the contents, whereas with the print statement
+    the cursor is positioned on the same line.
+
+    # Example #
+
+            #!/usr/bin/ruby
+
+            print "Hello World"
+            print "Good Morning"
+
+        This will produce the following result −
+
+            Hello WorldGood Morning
+
+        

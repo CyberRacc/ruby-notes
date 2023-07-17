@@ -1,0 +1,137 @@
+## How to Print Without a New Line ##
+
+    When you want to print something on the screen for the user to see, you normally use puts.
+
+    Like this:
+
+        puts "Hello there!"
+
+    Puts automatically adds a new line at the end of your message every time you use it.
+
+    If you don't want the new line, then use print.
+
+    Example:
+
+        print 123
+
+    The next time you print something, it will be on the same line as your last message.
+
+    Example:
+
+        print 123
+        print 456
+        print 789
+
+        123456789
+
+    But if you use puts:
+
+        puts 123
+        puts 456
+        puts 789
+
+        123
+        456
+        789
+
+    Every message has its own line.
+
+    Puts also treat arrays in a different way.
+
+    Example:
+
+        puts [1,2]
+        1
+        2
+
+        print [1,2]
+        [1,2]
+
+    Here's another difference:
+
+        Puts attempts to convert everything into a string (by calling to_s).
+
+        Why is that important?
+
+        Because if you're trying to puts an array with nil values...
+
+        It's going to show some blank lines!
+
+    Example:
+
+        puts [1,nil,nil,2]
+        1
+        # blank line
+        # blank line
+        2
+
+    To summarise, puts and print:
+
+        Convert things to strings, even if that means an empty string.
+
+    Only puts:
+
+        Adds a new line to the end of your messages
+
+        Displays array elements one-per-line
+
+## Debug Output with P ##
+
+    What about puts vs p?
+
+    p is a method that shows a more "raw" version of an object.
+
+    For example:
+
+        puts "Ruby Is Cool"
+        Ruby Is Cool
+        p "Ruby Is Cool"
+        "Ruby Is Cool"
+
+    What is p useful for?
+
+        Debugging.
+
+    When you're looking for things like (normally invisible) newline characters, or you want
+    to make sure some value is correct, then you use p.
+
+    Another difference:
+
+        puts always returns nil
+
+        p returns the object you pass to it
+
+    This is more technical difference...
+
+        But it can show up if you try to puts a variable as the last line of a method,
+        and you're using the return value of that method.
+
+    Example:
+
+        def numbers
+            puts 123
+        end
+        
+        numbers
+        # nil
+
+    In this example, the numbers method will display 123 on the screen, butits return value will be nil.
+
+    If you try:
+
+        result = numbers
+
+    Then result will be nil, instead of 123.
+
+    But if you use p then it will work.
+
+    Pretty Printing
+
+    Ruby has yet another printing method.
+
+    Called pp.
+
+    This is like p, but it prints big hashes and arrays in a nicer way.
+
+    Note that older versions of Ruby (pre 2.4) need to do require 'pp' to get
+    access to this method.
