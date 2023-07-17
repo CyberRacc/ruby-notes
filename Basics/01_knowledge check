@@ -1,0 +1,168 @@
+
+Knowledge Check
+
+This section contains questions for you to check your understanding of this lesson. If you’re having trouble answering the questions below on your own, review the material above to find the answer.
+
+    Numbers
+        What are the basic arithmetic operators you can use on numbers?
+
+        +   - plus
+        -   - take away
+        *   - times
+        /   - divide
+        %   - modulo
+        **  - power (exponent)
+
+        What’s the difference between an integer and a float?
+
+            Integer is a basic number: 8, 90, 1512
+            Float is a number with a decimal point: 8.24, 90.12312, 1512.0
+
+        What method would you use to convert a float to an integer?
+
+            .to_i
+
+        What method would you use to convert an integer to a float?
+
+            .to_f
+
+    Strings
+        What is a string?
+
+            An object with a bunch of characters, usually a word or a sentence: "hello", "what's up?"
+
+        What are the differences between single and double quotes?
+
+            '' - Single quotes
+
+                Can be used to define strings, and can be used to write strings inside of other strings.
+
+                    "Hello there, I am 'not happy' anymore."
+                    'Hello Ruby!'
+
+            "" - Double quotes
+
+                Used to write strings, can be used to input code inside of them (string interpolation):
+
+                    "This is a string #{this_is_some_code}
+
+        What is string interpolation?
+
+            String interpolation is used to place code inside of a string, double quotes only:
+
+                "This is a string #{with_some_code_in_it}"
+
+        How do you concatenate strings?
+
+            There are three methods of concatenation:
+
+                1. The + operator:
+
+                    "Hello " + "World!"
+
+                2. The << (shovel) operator:
+
+                    "Hello " << "World!"
+
+                3. The .concat method:
+
+                    "Hello ".concat("World!").concat("more words!")
+
+        What method would you use to change all the characters in your string to upper case?
+
+            .upcase
+
+            "some words".upcase #=> "SOME WORDS"
+
+        What method would you use to split up strings into arrays?
+
+        There are two ways, .split and .split("")
+
+        The first .split just splits each word (separated by a space I think) and creates an array with
+        each word.
+
+            "hello world".split
+            => ["hello", "world"]
+            
+        The second split("") where you add the ("") part, this splits every character in the string
+        and creates an array from them. Includes spaces.
+
+            "hello world".split("")
+            => ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"]
+
+        What are escape characters?
+
+            Escape characters are used to type certain characters inside of strings,
+            you can place strings inside of strings like this:
+
+                "This is a string \"and this is a string inside the string\" haha"
+
+            Basically anything after a backslash is an escape character
+
+                Even a backslash \\
+                \* \" \' etc
+
+        How do you access a specific character or substring?
+
+            To access specific characters in a string, you can use the square brackets after the string[].
+
+            Examples:
+
+                "hello"[0]      #=> "h"
+
+                "hello"[0..1]   #=> "he"
+
+                "hello"[0, 4]   #=> "hell"
+                # In this case, the 0 is the starting index, and the 4 is the amount of characters to give
+                from there. So H is 0, then gives 4 characters including the first one, resulting
+                in "hell".
+
+                "hello"[-1]     #=> "o" # takes the last character of the string.
+
+                What's a substring?
+
+                    Essentially, any part of the string, including the full string or even an empty string, that can be obtained by picking characters from the start index to an end index (without skipping any characters in between), is considered a substring.
+
+        How do you convert other data types into strings?
+
+            use the .to_s method.
+
+    Symbols
+
+        What is a symbol?
+
+            A symbol is like a string, but they are stored in memory only once.
+
+            They are stored in memory like so:
+
+                "string" == "string" #=> true
+
+                "string".obect_id == "string".object_id #=> false
+
+                :symbol.object_id == :symbol.object_id  #=> true
+
+            They are often used as keys in hashes.
+
+        How do you create a symbol?
+
+            You create a symbol by usiung a colon :
+
+            :my_symbol
+
+        What’s the difference between a symbol and a string?
+
+            Symbols are stored in memory only once, whereas strings are not.
+
+    Booleans
+
+        What does true represent?
+
+            Something that is true, that's it.
+
+        What does false represent?
+
+            Something that is false, that's it.
+
+        What does nil represent?
+
+            Ruby's way of saying "nothing".
