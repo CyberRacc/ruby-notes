@@ -1,0 +1,37 @@
+# Input Output Knowledge Check #
+
+
+Knowledge Check
+
+This section contains questions for you to check your understanding of this lesson. If you’re having trouble answering the questions below on your own, review the material above to find the answer.
+
+    What are the two methods we can use to output data to the user’s screen?
+
+        puts and print
+
+    What is similar between these two output methods?
+
+        They both print something to the screen
+        they both return nil
+
+    What is different between these two output methods?
+
+        puts adds a new line and attemps to convert to a string with to_s
+        puts returns nil
+
+        print does not add a new  line, 
+        print returns nil too
+
+
+    What is the method you can use to get input from the user?
+
+        gets
+
+        but to prevent the \n new line character, you should use:
+
+            gets.chomp to remove the \n
+
+    What is at least one difference between the output and input methods?
+
+        Input methods provide ways to get data, and output methods provide a way to
+        output data.
