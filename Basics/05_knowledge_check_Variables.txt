@@ -1,0 +1,69 @@
+
+Knowledge Check
+
+This section contains questions for you to check your understanding of this lesson. If you’re having trouble answering the questions below on your own, review the material above to find the answer.
+
+    What is a variable?
+
+        A variable is a container that is used to store information that is referenced and
+        manipulated by a computer. They provide a way to label data with a descriptive name.
+
+    How do you assign a value or an expression to a variable?
+
+        With the = symbol, for example:
+
+            age = 24;
+
+    What does the += assignment operator do?
+
+        Adds and assigns the result back to the variable. For example:
+
+            age = 24
+
+            age += 6
+            => 30
+
+        Age now has a value of 30.
+
+    What does the -= assignment operator do?
+
+        Same as above but for subtraction.
+
+        age -= 6
+        => 24
+
+    What does the *= assignment operator do?
+
+        Same as above but for multiplication
+
+            age *= 2
+            => 48
+
+    What does the /= assignment operator do?
+
+        Same as above but for divide:
+
+            age /= 2
+            => 24
+
+    What are the variable naming conventions?
+
+        Local variables are always lowercase and snake_case.
+        
+            new_variable = "something"
+
+        constant variables are always uppercase and snake_case.
+
+            NEW_CONSTANT = "idk"
+
+        global variables start with a $
+
+            $new_global_variable = "summit"
+
+        class variables start with two @ symbols
+
+            @@new_class_variable = "idek though"
+
+        instance variables start with a single @ symbol
+
+            @new_instance_variable = "something again"
