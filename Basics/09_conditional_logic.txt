@@ -288,7 +288,7 @@
 
         age = 19
         unless age < 18
-            putes "Get a job."
+            puts "Get a job."
         end
 
     Just like with if statements, you can write a simple unless statement on one line,

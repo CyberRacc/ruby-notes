@@ -4,13 +4,175 @@ Knowledge Check
 This section contains questions for you to check your understanding of this lesson. If you’re having trouble answering the questions below on your own, review the material above to find the answer.
 
     What is a Boolean?
+
+        A value thatis either true or false.
+
     What are “truthy” values?
+
+        Values that are true, anything that is not nil or false, is true.
+
     Are the following considered true or false: nil, 0, "0", "", 1, [], {} and -1?
+
+        nil - false
+        0   - true
+        "0" - true
+        ""  - true
+        1   - true
+        []  - true
+        {}  - true
+        -1  - true
+
     When do you use elsif?
+
+        When you want to check if another thing is true after the first one was false.
+
+            if false == true
+                puts "this code will never run"
+            elseif false == false
+                puts "this code runs"
+
+        So we are checking if false is true but if it's not, then check if false is false, which is true
+        so the code runs: puts "this code runs"
+
     When do you use unless?
+
+        When you want to do the oposite of an if statement, it checks if a value is false rather than if it's
+        true.
+
+        You should use an unless statement when you want to not do something
+        if a condition is true, because it can make you code more readable than using if !true.
+
+                age = 19
+                puts "Welcome to a life of debt." unless age < 18
+
+                unless age < 18         # if age is NOT less than 18. 
+                    puts "Down with that sort of thing." # Run this code unless age is less than 18.
+                else
+                    puts "Careful now!"
+                end
+
+
     What do || and && and ! do?
+
+        || (or) operator, checks if either one of the expressions on each side of it is true.
+
+            if 10 < 2 || 5 < 6 #=> although the left expression is false, the right one is true so the code executes.
+                puts "Party at Dave's!"
+            end
+
+            # This can also be written as
+            if 10 < 2 or 5 < 6
+                puts "Part at Dave's!"
+            end
+
+        && (and) operator checks if BOTH of the expressions on each side of it are true.
+        Both have to be true in order for the code to execute.
+
+            if 1 < 2 && 5 < 6
+                puts "Party at Dave's!"
+            end
+
+            # This can also be written as
+            if 1 < 2 and 5 < 6
+                puts "Party at Dave's!"
+            end
+
     What is short circuit evaluation?
-    What is returned by puts("woah") || true?
+
+        The && and || operators is the order of logic.
+        The expressions are always evaluated from left to right.
+
+        Using the && operator, both expressions must return true. If the first expression
+        encountered returns false, then the second expression is never checked. To
+        the Ruby interpreter, it's pointless to evaluate the second half as the
+        overall expression can never return true.
+
+        With the || operator, if the first expression evaluates to true, then the second
+        expression is never checked because the complete expression is already true,
+        and the code in the block is run.
+
+        The code never being checked is what makes it short circuit evaluation.
+
+    What is returned by puts("woah") || true ?
+
+        The || operator is a logical OR operator. It returns the first "truthy" value
+        it encounters when evaluating from left to right. If it doesn't find a truthy value
+        (which in Ruby is any value that is not nil or false), it returns the last value it evaluates.
+
+        puts("woah") prints "woah" to the console and then returns nil.
+
+        Because nil is a "falsy" value, the || operator then evaluates the next expression, true.
+
+        As true is a "truthy" value, the whole expression puts("woah") || true returns true.
+
+        So, the code prints "woah" to the console and the value of the expression is true.
+
     What is the ternary operator?
+
+        A ternary operator is a one-line if...else statement used to make cleaner code.
+
+        Ternary operators are most useful when you want to assign a value based on a condition,
+        all in one line.
+
+        You can translate the following if..else into a ternary operator:
+
+            x = 10
+            if x > 5
+                message = "x is greater than 5"
+            else
+                message = "x is not greater than 5"
+            end
+            puts message
+
+        Now as a ternary operator:
+        
+            x = 10
+            message = x > 5 ? "x is greater than 5" : "x is not greater than 5"
+            puts message
+
+        Ternary operator syntax:
+
+            condition ? result_if_true : result_if_false
+
+        The ternary operator itself doesn't output anything; it just returns a value.
+        So you can't use puts like the example above.
+
     When should you use a case statement?
+
+        When you need to write several conditional expressions that would usually mean
+        a messy if...elsif statement. You can even assign the return value from a case
+        statement to a variable for later use.
+
+        Case statements process each condition in turn, and if the condition returns false,
+        it will move onto the next one until a match is found. An else clause can be
+        provided to serve as a default if no match is found.
+
+            grade = "F"
+
+            did_i_pass = case grade #=> create a variable `did_i_pass` and assign thr result of a call to case with the variable grade passed in
+                when "A" then "Hell yeah!"
+                when "D" then "Don't tell your mother."
+                else "'YOU SHALL NOT PASS!' -Gandalf"
+            end
+
+        As soon as a match is found, the value of that match is returned, and the case statement
+        stops execution. Can you tell what the value of the did_i_pass variable is going to be
+        after the case statement? It's "'YOU SHALL NOT PASS!' -Gandalf"
+
+        If you need to do some more complex code manipulation, you can remove the then keyword
+        and instead place the code to be executed on the next line.
+
+            grade = "F"
+
+            case grade
+            when "A"
+                puts "You're a genius"
+                future_bank_account_balance = 5_000_000
+            when "D"
+                puts "Better luck next time"
+                can_i_retire_soon = false
+            else
+                puts "'YOU SHALL NOT PASS!' -Gandalf"
+                fml = true
+            end
 
